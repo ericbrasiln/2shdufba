@@ -1,0 +1,81 @@
+/*-- scss:rules --*/
+
+/* Importar a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap');
+
+/* Aplicar a fonte à apresentação */
+.reveal {
+  font-family: 'Atkinson Hyperlegible Next', sans-serif;
+  background-color: #f4c2c2; /* Fundo rosa pastel */
+  color: #1c140d; /* Texto escuro */
+}
+
+/* Ajuste para evitar que o rodapé fique sobreposto ao conteúdo */
+.reveal .slide {
+  padding-bottom: 30px;
+}
+
+/* Títulos principais (h1, h2, h3) centralizados */
+.reveal h1, 
+.reveal h2, 
+.reveal h3 {
+  font-family: 'Atkinson Hyperlegible Next', sans-serif;
+  font-weight: 700;
+  color: #1c140d; /* Texto escuro */
+  text-align: left; /* Centralizados */
+}
+
+/* Alinhar título do primeiro slide à esquerda */
+.reveal .title-slide h1 {
+  text-align: left;
+}
+
+/* Informações do front matter (título, subtítulo, autor e data) */
+.reveal .title, 
+.reveal .subtitle,
+.reveal .date {
+  color: #1c140d; /* Texto escuro */
+  text-align: center;
+}
+
+.reveal .author {
+  color: #1c140d; /* Texto escuro */
+  text-align: left;
+}
+
+/* Aplicar a fonte ao corpo do texto com tamanho menor */
+.reveal p, 
+.reveal ul li {
+  font-family: 'Atkinson Hyperlegible Next', sans-serif;
+  font-weight: 400;
+  font-size: 1em; /* Texto reduzido */
+  color: #1c140d; /* Texto escuro */
+}
+
+/* Estilizando os links */
+.reveal a {
+  color: #379683; /* Texto escuro */
+}
+
+/* Estilizando os bullet points */
+.reveal ul li {
+  color: #1c140d; /* Texto escuro */
+}
+
+/* Estilizando os blocos de código para nord theme */
+.reveal pre {
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Atkinson Hyperlegible Next', sans-serif;
+  font-size: 0.9em;
+  overflow-x: auto;
+}
+
+/* criar classe para centralizar imagens */
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+

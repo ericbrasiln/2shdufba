@@ -407,6 +407,16 @@ Em termos simples:
 
 ---
 
+## Qual o custo disso? {.center}
+
+- Altíssimo consumo de energia (relação direta com o uso)
+- Custos operacionais por **milhão de tokens gerados**
+- Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)
+
+⚠️ Usar IA generativa tem um custo **invisível ao usuário, mas real**
+
+---
+
 ## Principais inovações do GPT-5 {.center}
 
 ### 1. Arquitetura tipo “Mixture-of-Experts”  
@@ -485,6 +495,65 @@ com objetivos específicos, como:
 
 ---
 
+## Viéses na IA Generativa {.center}
+
+🔍 **Tipos de viés:**
+
+- **Viés de contexto**: falha ao interpretar corretamente
+- **Viés de automação**: confiança cega nas respostas
+- **Viés de representatividade**: grupos sub-representados
+- **Viés de exclusão**: ausência total de certos grupos
+
+💡 Causa: dados de treinamento com desigualdades  
+⚠️ Consequência: reprodução de discriminação e injustiças
+
+---
+
+## Alucinações em Modelos de Linguagem {.center}
+
+🤯 **O que é uma alucinação?**
+
+- Quando o modelo **gera uma resposta incorreta ou inventada**, mas com aparência de verdade.  
+- Resulta da forma como ele **estima probabilidades** para a próxima palavra — sem acesso direto à realidade.  
+- O modelo não “sabe”, apenas **prediz** o texto mais provável.
+
+---
+
+## Alucinações em Modelos de Linguagem {.center}
+
+📌 **Exemplos de alucinação:**
+
+- Citações inexistentes  
+- Fatos históricos trocados  
+- Nomes ou datas inventadas  
+
+⚠️ **Por isso é fundamental:** Verificar fontes, validar resultados e manter **supervisão humana** no uso acadêmico.
+
+---
+
+## Temperatura e Criatividade {.center}
+
+É um **parâmetro de controle de aleatoriedade** na geração de texto:
+
+| Valor                    | Efeito                                    |
+|:-------------------------|:------------------------------------------|
+| 🔹 **Baixa (≈ 0.1–0.3)** | Respostas mais previsíveis e consistentes |
+| 🔸 **Média (≈ 0.5–0.7)** | Equilíbrio entre coerência e criatividade |
+| 🔺 **Alta (≈ 0.8–1.0+)** | Respostas criativas, mas menos estáveis   |
+
+
+---
+
+## Controle da Temperatura {.center}
+
+
+| Contexto | Pode alterar? | Observação |
+|:----------|:---------------|:------------|
+| 💬 **Chatbots prontos** (ChatGPT, Gemini, Copilot) | ❌ Não | Valor pré-definido pelo sistema |
+| 🧠 **API / código** (`temperature=`) | ✅ Sim | Controla a criatividade e variação das respostas |
+
+---
+
 ## Do modelo ao diálogo {.center}
 
 💬 Quando interagimos com o GPT:
@@ -514,43 +583,6 @@ com objetivos específicos, como:
 - Milhares de **GPUs especializadas** (ex: NVIDIA A100)
 - Ambientes distribuídos em **data centers de alta performance**
 - Refrigeração avançada e uso intensivo de energia
-
----
-
-## Qual o custo disso? {.center}
-
-- Altíssimo consumo de energia (relação direta com o uso)
-- Custos operacionais por **milhão de tokens gerados**
-- Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)
-
-⚠️ Usar IA generativa tem um custo **invisível ao usuário, mas real**
-
----
-
-## Os limites físicos da IA: o caso Ghibli e os servidores da OpenAI {.center}
-
-🎨 Em abril de 2025, viralizou o uso do GPT-4o para gerar imagens no estilo do **Studio Ghibli**  
-🚨 Resultado: **sobrecarga nos servidores da OpenAI**  
-🔥 Sam Altman afirmou que os “GPUs estão derretendo” (figurativamente...)
-
-🖥️ Por quê?
-
-Fonte: [Digital Trends](https://www.digitaltrends.com/computing/openais-gpus-are-melting-over-viral-ghibli-trend-limits-for-paid-users-enforced/)
-
-:::notes
-
-- Geração de imagem com IA exige **altíssima carga computacional**
-- GPUs em data centers trabalham no limite térmico e elétrico
-- A demanda foi tão grande que a OpenAI **limitou usuários pagos**
-:::
-
----
-
-## {.center}
-
-![](https://ericbrasil.com.br/cclhm00114/aulas/assets/ghibli.jpg)
-
-Fonte: [Smillew Rahcuef via X](https://x.com/Smillew_Rahcuef/status/1905309950240288808)
 
 ---
 
@@ -600,358 +632,250 @@ Fonte: [Smillew Rahcuef via X](https://x.com/Smillew_Rahcuef/status/190530995024
 
 ---
 
-## Alucinações em Modelos de Linguagem {.center}
-
-🤯 **O que é uma alucinação?**
-
-- Quando o modelo **gera uma resposta incorreta ou inventada**, mas com aparência de verdade.  
-- Resulta da forma como ele **estima probabilidades** para a próxima palavra — sem acesso direto à realidade.  
-- O modelo não “sabe”, apenas **prediz** o texto mais provável.
+## 3. Rodando modelos locais com Ollama {.center}
 
 ---
 
-## Alucinações em Modelos de Linguagem {.center}
+## O que é o Ollama? {.columns}
 
-📌 **Exemplos de alucinação:**
-
-- Citações inexistentes  
-- Fatos históricos trocados  
-- Nomes ou datas inventadas  
-
-⚠️ **Por isso é fundamental:** Verificar fontes, validar resultados e manter **supervisão humana** no uso acadêmico.
-
----
-
-## Temperatura e Criatividade {.center}
-
-É um **parâmetro de controle de aleatoriedade** na geração de texto:
-
-| Valor                    | Efeito                                    |
-|:-------------------------|:------------------------------------------|
-| 🔹 **Baixa (≈ 0.1–0.3)** | Respostas mais previsíveis e consistentes |
-| 🔸 **Média (≈ 0.5–0.7)** | Equilíbrio entre coerência e criatividade |
-| 🔺 **Alta (≈ 0.8–1.0+)** | Respostas criativas, mas menos estáveis   |
-
-
----
-
-## Controle da Temperatura {.center}
-
-
-| Contexto | Pode alterar? | Observação |
-|:----------|:---------------|:------------|
-| 💬 **Chatbots prontos** (ChatGPT, Gemini, Copilot) | ❌ Não | Valor pré-definido pelo sistema |
-| 🧠 **API / código** (`temperature=`) | ✅ Sim | Controla a criatividade e variação das respostas |
-
----
-
-## Direitos Autorais e Propriedade Intelectual {.center}
-
-::: {.column width="48%"}
-📚 **Modelos de IAG podem reproduzir:**
-
-- Trechos de obras protegidas
-- Estilos e estruturas de autores reais
-- Conteúdos derivados sem autorização
+::: {.column width="65%"}
+- Plataforma para **executar Modelos de Linguagem (LLMs)** localmente  
+- Suporte nativo a modelos **abertos**   
+- Funciona em **Linux**, **Windows** e **macOS**  
+- Usa containers de modelos via **Modelfile**  
+- Baseado em `llama.cpp` → eficiente em CPUs comuns  
 :::
 
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-⚖️ **Riscos:**
-
-- Plágio
-- Violação de direitos autorais
-- Responsabilidade legal da instituição ou autor
+::: {.column width="35%"}
+![](https://ollama.com/public/ollama.png)
 :::
 
 ---
 
-## Vazamento de Dados e Acessos Indevidos {.center}
+## Por que usar o Ollama? {.center}
 
-::: {.column width="48%"}
-**💾 Riscos principais:**
+- 🔒 **Privacidade:** nada vai para a nuvem  
+- 💻 **Execução offline:** ideal para Humanidades e dados sensíveis  
+- ⚖️ **Autonomia e soberania digital**  
+- 🧪 **Reprodutibilidade:** sempre a mesma versão local  
+- 🪶 **Modelos leves:** funcionam em laptops modestos  
+- ⚙️ **Integração fácil** com Python, Node, REST APIs, Open WebUI  
+- Aprendizado prático sobre LLMs e IA Generativa
 
-- Restituição acidental de dados sensíveis no output
-- Armazenamento inadequado das interações
-- Compartilhamento em servidores externos
+---
+
+## Instalação rápida {.center}
+
+### 🐧 Linux (Ubuntu)
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+````
+
+### 🪟 Windows (WSL)
+
+```bash
+wsl --install
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+---
+
+## Conferindo sua instalação {.center}
+
+```bash
+# Verificar se o serviço está ativo
+systemctl status ollama
+
+# Listar modelos instalados
+ollama list
+```
+
+---
+
+## Baixando modelos {.center}
+
+```bash
+ollama pull phi3
+ollama pull mistral
+ollama pull llama3
+ollama pull gemma2
+```
+
+📌 *Dica:* Prefira modelos **small/mini** em PCs sem GPU.
+
+---
+
+## Rodando seu primeiro modelo {.center}
+
+```bash
+ollama run phi3:mini
+```
+
+Depois basta digitar um prompt:
+
+```
+Explique o conceito de “arquivo histórico” em 3 linhas.
+```
+
+---
+
+## Usando o Ollama com prompts diretos {.center}
+
+```bash
+ollama run mistral "Resuma este texto em 2 linhas: ... "
+```
+
+---
+
+## Usando via API (Python) {.center}
+
+```python
+import requests
+
+r = requests.post(
+  "http://localhost:11434/api/generate",
+  json={
+    "model": "phi3:mini",
+    "prompt": "Explique RAG em 3 linhas."
+  }
+)
+
+print(r.json()["response"])
+```
+
+---
+
+## Integração com documentos {.center}
+
+```python
+import requests
+
+texto = open("artigo.txt").read()
+
+prompt = f"Leia o texto abaixo e produza um resumo crítico:\n\n{texto}"
+
+r = requests.post(
+  "http://localhost:11434/api/generate",
+  json={"model": "mistral", "prompt": prompt}
+)
+
+print(r.json()["response"])
+```
+
+---
+
+## Onde ficam os modelos? {.center}
+
+```bash
+~/.ollama/models
+```
+
+Cada modelo é um **container** com:
+
+* arquitetura
+* quantização
+* contexto
+* parâmetros especiais
+* instruções do Modelfile
+
+---
+
+## Quantização: rodando modelos leves {.center}
+
+| Sufixo | Exemplo      | RAM           | Observação                  |
+| ------ | ------------ | ------------- | --------------------------- |
+| `q2`   | `phi3:q2`    | 🟢 baixa      | muito rápido, menos preciso |
+| `q4`   | `mistral:q4` | 🟡 média      | ótimo custo-benefício       |
+| `q6`   | `llama3:q6`  | 🔵 alta       | mais qualidade              |
+| `q8`   | `gemma2:q8`  | 🔴 muito alta | quase sem perdas            |
+
+---
+
+## Modelos recomendados para laptop sem GPU {.center}
+
+* `phi3:mini` (3.8B)
+* `mistral:instruct` (7B)
+* `llama3:8b`
+* `qwen2.5:7b`
+* `sabiá-7b` (modelo brasileiro)
+
+---
+
+## Dicas de uso prático na pesquisa {.columns}
+
+::: {.column width="50%"}
+🔎 **Para análise textual**
+
+* Resumos
+* Tópicos
+* Explicações conceituais
+* Reformulação de textos acadêmicos
 :::
 
-::: {.column width="4%"}
-:::
+::: {.column width="50%"}
+📚 **Para Humanidades Digitais**
 
-::: {.column width="48%"}
-**🔐 Medidas preventivas:**
-
-- Não inserir dados reais em plataformas não homologadas
-- Preferir modelos abertos ou locais
-- Aplicar anonimização e mascaramento de dados
+* Extração de entidades
+* Classificação simples
+* Exploração preliminar de corpus
+* Auxílio em OCR e anotação
 :::
 
 ---
 
-## Viéses na IA Generativa {.center}
+## Open WebUI + Ollama {.center}
 
-🔍 **Tipos de viés identificados:**
+🎛️ Interface gráfica para controlar seus modelos:
 
-- **Viés de contexto**: falha ao interpretar corretamente
-- **Viés de automação**: confiança cega nas respostas
-- **Viés de representatividade**: grupos sub-representados
-- **Viés de exclusão**: ausência total de certos grupos
+* Histórico de conversas
+* Suporte a arquivos
+* Ajuste de temperatura
+* Múltiplos usuários
+* Painel de modelos disponíveis
 
-💡 Causa: dados de treinamento com desigualdades  
-⚠️ Consequência: reprodução de discriminação e injustiças
-
----
-
-## IA Generativa na vida acadêmica {.center}
-
-📚 **Potenciais usos:**
-
-- Escrita de rascunhos e revisão textual
-- Assistência na leitura e análise de textos
-- Geração de ideias, resumos, estruturas
-- Tradução e adaptação linguística
-- Criação de materiais didáticos
-
-⚠️ Requer uso **ético**, **crítico** e com **transparência**.
+```bash
+pip install open-webui
+open-webui serve
+```
 
 ---
 
-## Princípios básicos de bom uso {.center}
+## Atividade prática {.center}
 
-::: {.column width="48%"}
-✅ Revisar tudo o que a IA produz  
+🔧 **Tarefas:**
 
-✅ Identificar claramente o que foi gerado por IA  
+1. Rodar **2 modelos locais**
+   (Phi-3, Mistral, LLaMA3, Gemma, Sabiá)
 
-✅ Validar dados, fontes e argumentos  
+2. Criar um comando:
 
-✅ Manter a autoria humana e a responsabilidade final
+```bash
+ollama run phi3:mini "Resuma o texto abaixo: <cole o trecho>"
+```
 
-:::
+3. Criar um script Python que receba:
 
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-❌ Nunca publicar textos gerados por IA **sem revisão**  
-
-❌ Não usar IA para fraudar ou ocultar autoria
-
-❌ Não buscar respostas para temas totalmente desconhecidos
-:::
+   * 1 arquivo `.txt`
+   * 1 instrução
+   * Retorne análise ou resumo
 
 ---
 
-## Questões Éticas {.center}
+## Cuidados e ética {.center}
 
-⚖️ **Ética no uso da IAG envolve:**
-
-- 📌 Conformidade com a LGPD e direitos autorais
-- 🔍 Transparência sobre o uso de IA
-- 🧩 Inclusão e respeito à diversidade
-- 🧠 Evitar reprodução de preconceitos e estereótipos
-- 🗣️ Assumir responsabilidade pelo conteúdo final
-
-🧭 Ética = julgamento contextual, responsabilidade e cuidado
+* Sempre revisar conteúdos gerados
+* Modelos locais **não substituem método científico**
+* Documentar o uso de IA no trabalho
+* Checar viéses, alucinações e limitações
+* Preferir modelos **abertos e auditáveis**
 
 ---
 
-## Como usar? {.center}
-
-💬 **Use com clareza e propósito:**
-
-- Planeje o que deseja gerar (defina objetivos)
-- Elabore bons **prompts** (comandos claros)
-- Revise criticamente os resultados
-- Cite o uso da ferramenta, quando apropriado
-
----
-
-## Como citar? {.center}
-
-📚 A MLA recomenda citar ferramentas de IA generativa sempre que:
-
-- 📌 Você incorporar conteúdo gerado pela IA (texto, imagem, dados etc.);
-- 🛠️ Utilizar a IA para funções como revisão, tradução ou edição textual.
-
-⚠️ A autoria deve continuar sendo **humana**.
-
----
-
-### 🧩 Elementos da citação no modelo MLA: {.center}
-
-- **Título da fonte**: o conteúdo gerado (ex: “Resumo gerado para introdução”)
-- **Título do container**: nome da IA (ex: *ChatGPT*)
-- **Versão**: exata, se possível (ex: GPT-4o, abril de 2025)
-- **Editora**: empresa responsável (ex: OpenAI)
-- **Data**: da geração do conteúdo
-- **Local**: URL da ferramenta (ex: https://chat.openai.com)
-
-Fonte: [MLA Style Center – Citing Generative AI](https://style.mla.org/citing-generative-ai/)
-
----
-
-## 📎 Exemplo de nota de uso de IA {.center}
-
-> Foi utilizado o modelo GPT-4o da empresa OpenAI, com o plano ChatGPT Plus, para revisão ortográfica, gramatical e sintática e apoio na formatação das referências. Ressalta-se que todo o conteúdo analítico, argumentativo e as ideias centrais do texto são de responsabilidade exclusiva do autor. As consultas foram realizadas entre os dias 03 e 16 de fevereiro e entre 6 e 8 de abril de 2025.
-
----
-
-## 📝 Exemplo de citação em estilo MLA {.center}
-
-📌 "Revisão ortográfica, gramatical e sintática de texto acadêmico." *ChatGPT*, version GPT-4o, OpenAI, 8 Apr. 2025, https://chat.openai.com/.
-
----
-
-## Exemplos de uso da IAG na vida acadêmica {.center}
-
-📌 IAG pode ser usada para **otimizar tarefas** sem substituir o trabalho intelectual:
-
-- 📖 Assistente de leitura
-- 📝 Revisor de textos
-- 📊 Apoio à análise de dados
-- 👨‍🏫 Preparação de aulas
-- 🌍 Tradução de materiais
-
----
-
-## Assistente de leitura {.center}
-
-::: {.columns}
-::: {.column width="48%"}
-📘 **Aplicações:**
-
-- Geração de resumos iniciais
-- Reformulação de trechos difíceis
-- Sugestões de questões a partir do texto
-:::
-
-::: {.column width="4%"}
-
-:::
-
-::: {.column width="48%"}
-⚠️ **Cuidados:**
-
-- Não substituir a leitura crítica
-- Verificar fidelidade ao texto original
-:::
-:::
-
----
-
-## Revisor de textos {.center}
-
-::: {.columns}
-::: {.column width="48%"}
-📝 **A IA pode:**
-
-- Corrigir gramática e ortografia
-- Sugerir reformulações
-- Ajudar na normalização de referências
-
-:::
-
-::: {.column width="4%"}
-
-:::
-
-::: {.column width="48%"}
-⚠️ **Boas práticas:**
-
-- Revisar sempre as sugestões
-- Comparar versões para aprender com o processo
-- Não publicar sem passar por revisão crítica
-
-:::
-:::
-
----
-
-## Análise de dados e visualização {.center}
-
-::: {.columns}
-::: {.column width="48%"}
-
-📊 **Aplicações:**
-
-- Geração de gráficos e tabelas
-- Sugestões de interpretação inicial
-- Apoio a análises qualitativas com IA (ex: codificação)
-
-:::
-
-::: {.column width="4%"}
-
-:::
-
-::: {.column width="48%"}
-⚠️ **Cuidados:**
-
-- Validar os resultados com conhecimento de método
-- Cuidado com “interpretações fabricadas”
-
-:::
-:::
-
----
-
-## Preparação de aulas e materiais didáticos {.center}
-
-::: {.columns}
-::: {.column width="48%"}
-
-👨‍🏫 **IAG pode ajudar a:**
-
-- Gerar planos de aula
-- Criar perguntas e atividades
-- Adaptar linguagem para diferentes públicos
-
-:::
-
-::: {.column width="4%"}
-
-:::
-
-::: {.column width="48%"}
-⚠️ **O conteúdo gerado deve:**
-
-- Ser adaptado ao contexto da turma
-- Passar por revisão ética e pedagógica
-
-:::
-:::
-
----
-
-## Tradução de materiais acadêmicos {.center}
-
-::: {.columns}
-::: {.column width="48%"}
-
-🌍 **IAG pode:**
-
-- Ajudar na tradução de artigos e documentos
-- Facilitar a escrita em segunda língua
-
-:::
-
-::: {.column width="4%"}
-
-:::
-
-::: {.column width="48%"}
-⚠️ **Cuidados:**
-
-- Evitar traduções literais
-- Revisar tecnicamente o vocabulário
-- Verificar coerência textual
-
-:::
-:::
-
-
+## Encerramento da Parte 3 {.center}
+
+> Agora que entendemos como rodar modelos locais…
+>
+> ✨ estamos prontos para discutir **agentes locais**,
+> automação leve e **OpenCode** (Parte 4 — bônus)
 

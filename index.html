@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-d3c6e7ca7f492146a4d60609f779c2a3.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -143,7 +209,7 @@ Eric Brasil <a href="https://orcid.org/0000-0001-5067-8475" class="quarto-title-
     </div>
 </div>
 
-  <p class="date">segunda-feira, 24 de novembro de 2025</p>
+  <p class="date">terça-feira, 25 de novembro de 2025</p>
 </section>
 <section id="nota-sobre-o-uso-de-ia-generativa" class="slide level2 center">
 <h2>Nota sobre o uso de IA Generativa</h2>
@@ -522,6 +588,15 @@ Quanto mais parâmetros, maior a <strong>capacidade de representar padrões comp
 </tbody>
 </table>
 </section>
+<section id="qual-o-custo-disso" class="slide level2 center">
+<h2>Qual o custo disso?</h2>
+<ul>
+<li>Altíssimo consumo de energia (relação direta com o uso)</li>
+<li>Custos operacionais por <strong>milhão de tokens gerados</strong></li>
+<li>Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)</li>
+</ul>
+<p>⚠️ Usar IA generativa tem um custo <strong>invisível ao usuário, mas real</strong></p>
+</section>
 <section id="principais-inovações-do-gpt-5" class="slide level2 center">
 <h2>Principais inovações do GPT-5</h2>
 <h3 id="arquitetura-tipo-mixture-of-experts">1. Arquitetura tipo “Mixture-of-Experts”</h3>
@@ -599,114 +674,18 @@ com objetivos específicos, como:</p>
 <li>Ensina o modelo a <strong>seguir comandos (“faça isso…”)</strong> em linguagem natural.</li>
 </ul>
 </section>
-<section id="do-modelo-ao-diálogo" class="slide level2 center">
-<h2>Do modelo ao diálogo</h2>
-<p>💬 Quando interagimos com o GPT:</p>
-<ol type="1">
-<li>O texto é convertido em <strong>tokens</strong> (pedaços de palavras);<br>
-</li>
-<li>O modelo calcula probabilidades para o próximo token;<br>
-</li>
-<li>Gera as palavras uma a uma, <strong>predizendo o texto mais provável</strong>;<br>
-</li>
-<li>Mantém o contexto da conversa por meio de <strong>atenção e embeddings</strong>.</li>
-</ol>
-<p>📎 Cada resposta é uma <strong>nova previsão probabilística</strong>, não uma busca em banco de dados.</p>
+<section id="viéses-na-ia-generativa" class="slide level2 center">
+<h2>Viéses na IA Generativa</h2>
+<p>🔍 <strong>Tipos de viés:</strong></p>
+<ul>
+<li><strong>Viés de contexto</strong>: falha ao interpretar corretamente</li>
+<li><strong>Viés de automação</strong>: confiança cega nas respostas</li>
+<li><strong>Viés de representatividade</strong>: grupos sub-representados</li>
+<li><strong>Viés de exclusão</strong>: ausência total de certos grupos</li>
+</ul>
+<p>💡 Causa: dados de treinamento com desigualdades<br>
+⚠️ Consequência: reprodução de discriminação e injustiças</p>
 </section>
-<section id="como-se-estrutura-um-chatbot-com-ia" class="slide level2 center">
-<h2>Como se estrutura um chatbot com IA?</h2>
-<ul>
-<li><strong>Modelo base (LLM)</strong>: entende e gera respostas</li>
-<li><strong>Interface (chat)</strong>: onde ocorre a interação</li>
-<li><strong>Regras e filtros</strong>: para segurança e adequação</li>
-<li><strong>Memória contextual (opcional)</strong>: para lembrar o que foi dito</li>
-</ul>
-</section>
-<section id="onde-rodam-os-chatbots-a-infraestrutura-dos-llms" class="slide level2 center">
-<h2>Onde rodam os chatbots? A infraestrutura dos LLMs</h2>
-<p>🖥️ Modelos como o ChatGPT são executados em <strong>megaestruturas computacionais</strong> com:</p>
-<ul>
-<li>Milhares de <strong>GPUs especializadas</strong> (ex: NVIDIA A100)</li>
-<li>Ambientes distribuídos em <strong>data centers de alta performance</strong></li>
-<li>Refrigeração avançada e uso intensivo de energia</li>
-</ul>
-</section>
-<section id="qual-o-custo-disso" class="slide level2 center">
-<h2>Qual o custo disso?</h2>
-<ul>
-<li>Altíssimo consumo de energia (relação direta com o uso)</li>
-<li>Custos operacionais por <strong>milhão de tokens gerados</strong></li>
-<li>Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)</li>
-</ul>
-<p>⚠️ Usar IA generativa tem um custo <strong>invisível ao usuário, mas real</strong></p>
-</section>
-<section id="os-limites-físicos-da-ia-o-caso-ghibli-e-os-servidores-da-openai" class="slide level2 center">
-<h2>Os limites físicos da IA: o caso Ghibli e os servidores da OpenAI</h2>
-<p>🎨 Em abril de 2025, viralizou o uso do GPT-4o para gerar imagens no estilo do <strong>Studio Ghibli</strong><br>
-🚨 Resultado: <strong>sobrecarga nos servidores da OpenAI</strong><br>
-🔥 Sam Altman afirmou que os “GPUs estão derretendo” (figurativamente…)</p>
-<p>🖥️ Por quê?</p>
-<p>Fonte: <a href="https://www.digitaltrends.com/computing/openais-gpus-are-melting-over-viral-ghibli-trend-limits-for-paid-users-enforced/">Digital Trends</a></p>
-<aside class="notes">
-<ul>
-<li>Geração de imagem com IA exige <strong>altíssima carga computacional</strong></li>
-<li>GPUs em data centers trabalham no limite térmico e elétrico</li>
-<li>A demanda foi tão grande que a OpenAI <strong>limitou usuários pagos</strong></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
-
-<img data-src="https://ericbrasil.com.br/cclhm00114/aulas/assets/ghibli.jpg" class="r-stretch"><p>Fonte: <a href="https://x.com/Smillew_Rahcuef/status/1905309950240288808">Smillew Rahcuef via X</a></p>
-</section>
-<section id="modelos-fechados-vs-modelos-abertos" class="slide level2 columns">
-<h2>Modelos Fechados vs Modelos Abertos</h2>
-<div class="column" style="width:50%;">
-<p><strong>🔒 Modelos Fechados</strong></p>
-<ul>
-<li>Desenvolvidos por grandes empresas (OpenAI, Google)</li>
-<li>Acesso via APIs</li>
-<li>Pouca transparência (caixa-preta)</li>
-<li>Exemplos: GPT-4, Claude, Gemini</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>🔓 Modelos Abertos</strong></p>
-<ul>
-<li>Código-fonte acessível e personalizável</li>
-<li>Executáveis localmente</li>
-<li>Maior controle e privacidade</li>
-<li>Exemplos: LLaMA 3 (Meta), Mistral, Sabia-7B (Maritaca)</li>
-</ul>
-</div></section>
-<section id="como-escolher-entre-modelos" class="slide level2 center">
-<h2>Como escolher entre modelos?</h2>
-<div class="column" style="width:48%;">
-<p>📌 <strong>Depende de:</strong></p>
-<ul>
-<li>⚙️ Infraestrutura disponível</li>
-<li>🛡️ Requisitos de segurança e privacidade</li>
-<li>🎯 Nível de personalização desejado</li>
-<li>💰 Custo e acessibilidade</li>
-</ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>📍 <strong>Modelos abertos são preferíveis quando há:</strong></p>
-<p>✔️ Necessidade de controle<br>
-✔️ Regras rígidas de privacidade<br>
-✔️ Desejo de transparência e auditabilidade</p>
-</div></section>
 <section id="alucinações-em-modelos-de-linguagem" class="slide level2 center">
 <h2>Alucinações em Modelos de Linguagem</h2>
 <p>🤯 <strong>O que é uma alucinação?</strong></p>
@@ -785,247 +764,304 @@ com objetivos específicos, como:</p>
 </tbody>
 </table>
 </section>
-<section id="direitos-autorais-e-propriedade-intelectual" class="slide level2 center">
-<h2>Direitos Autorais e Propriedade Intelectual</h2>
-<div class="column" style="width:48%;">
-<p>📚 <strong>Modelos de IAG podem reproduzir:</strong></p>
+<section id="do-modelo-ao-diálogo" class="slide level2 center">
+<h2>Do modelo ao diálogo</h2>
+<p>💬 Quando interagimos com o GPT:</p>
+<ol type="1">
+<li>O texto é convertido em <strong>tokens</strong> (pedaços de palavras);<br>
+</li>
+<li>O modelo calcula probabilidades para o próximo token;<br>
+</li>
+<li>Gera as palavras uma a uma, <strong>predizendo o texto mais provável</strong>;<br>
+</li>
+<li>Mantém o contexto da conversa por meio de <strong>atenção e embeddings</strong>.</li>
+</ol>
+<p>📎 Cada resposta é uma <strong>nova previsão probabilística</strong>, não uma busca em banco de dados.</p>
+</section>
+<section id="como-se-estrutura-um-chatbot-com-ia" class="slide level2 center">
+<h2>Como se estrutura um chatbot com IA?</h2>
 <ul>
-<li>Trechos de obras protegidas</li>
-<li>Estilos e estruturas de autores reais</li>
-<li>Conteúdos derivados sem autorização</li>
+<li><strong>Modelo base (LLM)</strong>: entende e gera respostas</li>
+<li><strong>Interface (chat)</strong>: onde ocorre a interação</li>
+<li><strong>Regras e filtros</strong>: para segurança e adequação</li>
+<li><strong>Memória contextual (opcional)</strong>: para lembrar o que foi dito</li>
+</ul>
+</section>
+<section id="onde-rodam-os-chatbots-a-infraestrutura-dos-llms" class="slide level2 center">
+<h2>Onde rodam os chatbots? A infraestrutura dos LLMs</h2>
+<p>🖥️ Modelos como o ChatGPT são executados em <strong>megaestruturas computacionais</strong> com:</p>
+<ul>
+<li>Milhares de <strong>GPUs especializadas</strong> (ex: NVIDIA A100)</li>
+<li>Ambientes distribuídos em <strong>data centers de alta performance</strong></li>
+<li>Refrigeração avançada e uso intensivo de energia</li>
+</ul>
+</section>
+<section id="modelos-fechados-vs-modelos-abertos" class="slide level2 columns">
+<h2>Modelos Fechados vs Modelos Abertos</h2>
+<div class="column" style="width:50%;">
+<p><strong>🔒 Modelos Fechados</strong></p>
+<ul>
+<li>Desenvolvidos por grandes empresas (OpenAI, Google)</li>
+<li>Acesso via APIs</li>
+<li>Pouca transparência (caixa-preta)</li>
+<li>Exemplos: GPT-4, Claude, Gemini</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>🔓 Modelos Abertos</strong></p>
+<ul>
+<li>Código-fonte acessível e personalizável</li>
+<li>Executáveis localmente</li>
+<li>Maior controle e privacidade</li>
+<li>Exemplos: LLaMA 3 (Meta), Mistral, Sabia-7B (Maritaca)</li>
+</ul>
+</div></section>
+<section id="como-escolher-entre-modelos" class="slide level2 center">
+<h2>Como escolher entre modelos?</h2>
+<div class="column" style="width:48%;">
+<p>📌 <strong>Depende de:</strong></p>
+<ul>
+<li>⚙️ Infraestrutura disponível</li>
+<li>🛡️ Requisitos de segurança e privacidade</li>
+<li>🎯 Nível de personalização desejado</li>
+<li>💰 Custo e acessibilidade</li>
 </ul>
 </div><div class="column" style="width:4%;">
 
 </div><div class="column" style="width:48%;">
-<p>⚖️ <strong>Riscos:</strong></p>
+<p>📍 <strong>Modelos abertos são preferíveis quando há:</strong></p>
+<p>✔️ Necessidade de controle<br>
+✔️ Regras rígidas de privacidade<br>
+✔️ Desejo de transparência e auditabilidade</p>
+</div></section>
+<section id="rodando-modelos-locais-com-ollama" class="slide level2 center">
+<h2>3. Rodando modelos locais com Ollama</h2>
+</section>
+<section id="o-que-é-o-ollama" class="slide level2 columns">
+<h2>O que é o Ollama?</h2>
+<div class="column" style="width:65%;">
 <ul>
-<li>Plágio</li>
-<li>Violação de direitos autorais</li>
-<li>Responsabilidade legal da instituição ou autor</li>
+<li>Plataforma para <strong>executar Modelos de Linguagem (LLMs)</strong> localmente<br>
+</li>
+<li>Suporte nativo a modelos <strong>abertos</strong><br>
+</li>
+<li>Funciona em <strong>Linux</strong>, <strong>Windows</strong> e <strong>macOS</strong><br>
+</li>
+<li>Usa containers de modelos via <strong>Modelfile</strong><br>
+</li>
+<li>Baseado em <code>llama.cpp</code> → eficiente em CPUs comuns<br>
+</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img data-src="https://ollama.com/public/ollama.png"></p>
+</div></section>
+<section id="por-que-usar-o-ollama" class="slide level2 center">
+<h2>Por que usar o Ollama?</h2>
+<ul>
+<li>🔒 <strong>Privacidade:</strong> nada vai para a nuvem<br>
+</li>
+<li>💻 <strong>Execução offline:</strong> ideal para Humanidades e dados sensíveis<br>
+</li>
+<li>⚖️ <strong>Autonomia e soberania digital</strong><br>
+</li>
+<li>🧪 <strong>Reprodutibilidade:</strong> sempre a mesma versão local<br>
+</li>
+<li>🪶 <strong>Modelos leves:</strong> funcionam em laptops modestos<br>
+</li>
+<li>⚙️ <strong>Integração fácil</strong> com Python, Node, REST APIs, Open WebUI<br>
+</li>
+<li></li>
+<li>Aprendizado prático sobre LLMs e IA Generativa</li>
+</ul>
+</section>
+<section id="instalação-rápida" class="slide level2 center">
+<h2>Instalação rápida</h2>
+<h3 id="linux-ubuntu">🐧 Linux (Ubuntu)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://ollama.com/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="windows-wsl">🪟 Windows (WSL)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">wsl</span> <span class="at">--install</span></span>
+<span id="cb2-2"><a href=""></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://ollama.com/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="conferindo-sua-instalação" class="slide level2 center">
+<h2>Conferindo sua instalação</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># Verificar se o serviço está ativo</span></span>
+<span id="cb3-2"><a href=""></a><span class="ex">systemctl</span> status ollama</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="co"># Listar modelos instalados</span></span>
+<span id="cb3-5"><a href=""></a><span class="ex">ollama</span> list</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="baixando-modelos" class="slide level2 center">
+<h2>Baixando modelos</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">ollama</span> pull phi3</span>
+<span id="cb4-2"><a href=""></a><span class="ex">ollama</span> pull mistral</span>
+<span id="cb4-3"><a href=""></a><span class="ex">ollama</span> pull llama3</span>
+<span id="cb4-4"><a href=""></a><span class="ex">ollama</span> pull gemma2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>📌 <em>Dica:</em> Prefira modelos <strong>small/mini</strong> em PCs sem GPU.</p>
+</section>
+<section id="rodando-seu-primeiro-modelo" class="slide level2 center">
+<h2>Rodando seu primeiro modelo</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="ex">ollama</span> run phi3:mini</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Depois basta digitar um prompt:</p>
+<pre><code>Explique o conceito de “arquivo histórico” em 3 linhas.</code></pre>
+</section>
+<section id="usando-o-ollama-com-prompts-diretos" class="slide level2 center">
+<h2>Usando o Ollama com prompts diretos</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="ex">ollama</span> run mistral <span class="st">"Resuma este texto em 2 linhas: ... "</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="usando-via-api-python" class="slide level2 center">
+<h2>Usando via API (Python)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="im">import</span> requests</span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a>r <span class="op">=</span> requests.post(</span>
+<span id="cb8-4"><a href=""></a>  <span class="st">"http://localhost:11434/api/generate"</span>,</span>
+<span id="cb8-5"><a href=""></a>  json<span class="op">=</span>{</span>
+<span id="cb8-6"><a href=""></a>    <span class="st">"model"</span>: <span class="st">"phi3:mini"</span>,</span>
+<span id="cb8-7"><a href=""></a>    <span class="st">"prompt"</span>: <span class="st">"Explique RAG em 3 linhas."</span></span>
+<span id="cb8-8"><a href=""></a>  }</span>
+<span id="cb8-9"><a href=""></a>)</span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a><span class="bu">print</span>(r.json()[<span class="st">"response"</span>])</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="integração-com-documentos" class="slide level2 center">
+<h2>Integração com documentos</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">import</span> requests</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a>texto <span class="op">=</span> <span class="bu">open</span>(<span class="st">"artigo.txt"</span>).read()</span>
+<span id="cb9-4"><a href=""></a></span>
+<span id="cb9-5"><a href=""></a>prompt <span class="op">=</span> <span class="ss">f"Leia o texto abaixo e produza um resumo crítico:</span><span class="ch">\n\n</span><span class="sc">{</span>texto<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb9-6"><a href=""></a></span>
+<span id="cb9-7"><a href=""></a>r <span class="op">=</span> requests.post(</span>
+<span id="cb9-8"><a href=""></a>  <span class="st">"http://localhost:11434/api/generate"</span>,</span>
+<span id="cb9-9"><a href=""></a>  json<span class="op">=</span>{<span class="st">"model"</span>: <span class="st">"mistral"</span>, <span class="st">"prompt"</span>: prompt}</span>
+<span id="cb9-10"><a href=""></a>)</span>
+<span id="cb9-11"><a href=""></a></span>
+<span id="cb9-12"><a href=""></a><span class="bu">print</span>(r.json()[<span class="st">"response"</span>])</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="onde-ficam-os-modelos" class="slide level2 center">
+<h2>Onde ficam os modelos?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">~/.ollama/models</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cada modelo é um <strong>container</strong> com:</p>
+<ul>
+<li>arquitetura</li>
+<li>quantização</li>
+<li>contexto</li>
+<li>parâmetros especiais</li>
+<li>instruções do Modelfile</li>
+</ul>
+</section>
+<section id="quantização-rodando-modelos-leves" class="slide level2 center">
+<h2>Quantização: rodando modelos leves</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Sufixo</th>
+<th>Exemplo</th>
+<th>RAM</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>q2</code></td>
+<td><code>phi3:q2</code></td>
+<td>🟢 baixa</td>
+<td>muito rápido, menos preciso</td>
+</tr>
+<tr class="even">
+<td><code>q4</code></td>
+<td><code>mistral:q4</code></td>
+<td>🟡 média</td>
+<td>ótimo custo-benefício</td>
+</tr>
+<tr class="odd">
+<td><code>q6</code></td>
+<td><code>llama3:q6</code></td>
+<td>🔵 alta</td>
+<td>mais qualidade</td>
+</tr>
+<tr class="even">
+<td><code>q8</code></td>
+<td><code>gemma2:q8</code></td>
+<td>🔴 muito alta</td>
+<td>quase sem perdas</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="modelos-recomendados-para-laptop-sem-gpu" class="slide level2 center">
+<h2>Modelos recomendados para laptop sem GPU</h2>
+<ul>
+<li><code>phi3:mini</code> (3.8B)</li>
+<li><code>mistral:instruct</code> (7B)</li>
+<li><code>llama3:8b</code></li>
+<li><code>qwen2.5:7b</code></li>
+<li><code>sabiá-7b</code> (modelo brasileiro)</li>
+</ul>
+</section>
+<section id="dicas-de-uso-prático-na-pesquisa" class="slide level2 columns">
+<h2>Dicas de uso prático na pesquisa</h2>
+<div class="column" style="width:50%;">
+<p>🔎 <strong>Para análise textual</strong></p>
+<ul>
+<li>Resumos</li>
+<li>Tópicos</li>
+<li>Explicações conceituais</li>
+<li>Reformulação de textos acadêmicos</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>📚 <strong>Para Humanidades Digitais</strong></p>
+<ul>
+<li>Extração de entidades</li>
+<li>Classificação simples</li>
+<li>Exploração preliminar de corpus</li>
+<li>Auxílio em OCR e anotação</li>
 </ul>
 </div></section>
-<section id="vazamento-de-dados-e-acessos-indevidos" class="slide level2 center">
-<h2>Vazamento de Dados e Acessos Indevidos</h2>
-<div class="column" style="width:48%;">
-<p><strong>💾 Riscos principais:</strong></p>
+<section id="open-webui-ollama" class="slide level2 center">
+<h2>Open WebUI + Ollama</h2>
+<p>🎛️ Interface gráfica para controlar seus modelos:</p>
 <ul>
-<li>Restituição acidental de dados sensíveis no output</li>
-<li>Armazenamento inadequado das interações</li>
-<li>Compartilhamento em servidores externos</li>
+<li>Histórico de conversas</li>
+<li>Suporte a arquivos</li>
+<li>Ajuste de temperatura</li>
+<li>Múltiplos usuários</li>
+<li>Painel de modelos disponíveis</li>
 </ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p><strong>🔐 Medidas preventivas:</strong></p>
-<ul>
-<li>Não inserir dados reais em plataformas não homologadas</li>
-<li>Preferir modelos abertos ou locais</li>
-<li>Aplicar anonimização e mascaramento de dados</li>
-</ul>
-</div></section>
-<section id="viéses-na-ia-generativa" class="slide level2 center">
-<h2>Viéses na IA Generativa</h2>
-<p>🔍 <strong>Tipos de viés identificados:</strong></p>
-<ul>
-<li><strong>Viés de contexto</strong>: falha ao interpretar corretamente</li>
-<li><strong>Viés de automação</strong>: confiança cega nas respostas</li>
-<li><strong>Viés de representatividade</strong>: grupos sub-representados</li>
-<li><strong>Viés de exclusão</strong>: ausência total de certos grupos</li>
-</ul>
-<p>💡 Causa: dados de treinamento com desigualdades<br>
-⚠️ Consequência: reprodução de discriminação e injustiças</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">pip</span> install open-webui</span>
+<span id="cb11-2"><a href=""></a><span class="ex">open-webui</span> serve</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="ia-generativa-na-vida-acadêmica" class="slide level2 center">
-<h2>IA Generativa na vida acadêmica</h2>
-<p>📚 <strong>Potenciais usos:</strong></p>
+<section id="atividade-prática" class="slide level2 center">
+<h2>Atividade prática</h2>
+<p>🔧 <strong>Tarefas:</strong></p>
+<ol type="1">
+<li><p>Rodar <strong>2 modelos locais</strong> (Phi-3, Mistral, LLaMA3, Gemma, Sabiá)</p></li>
+<li><p>Criar um comando:</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">ollama</span> run phi3:mini <span class="st">"Resuma o texto abaixo: &lt;cole o trecho&gt;"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li><p>Criar um script Python que receba:</p>
 <ul>
-<li>Escrita de rascunhos e revisão textual</li>
-<li>Assistência na leitura e análise de textos</li>
-<li>Geração de ideias, resumos, estruturas</li>
-<li>Tradução e adaptação linguística</li>
-<li>Criação de materiais didáticos</li>
-</ul>
-<p>⚠️ Requer uso <strong>ético</strong>, <strong>crítico</strong> e com <strong>transparência</strong>.</p>
+<li>1 arquivo <code>.txt</code></li>
+<li>1 instrução</li>
+<li>Retorne análise ou resumo</li>
+</ul></li>
+</ol>
 </section>
-<section id="princípios-básicos-de-bom-uso" class="slide level2 center">
-<h2>Princípios básicos de bom uso</h2>
-<div class="column" style="width:48%;">
-<p>✅ Revisar tudo o que a IA produz</p>
-<p>✅ Identificar claramente o que foi gerado por IA</p>
-<p>✅ Validar dados, fontes e argumentos</p>
-<p>✅ Manter a autoria humana e a responsabilidade final</p>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>❌ Nunca publicar textos gerados por IA <strong>sem revisão</strong></p>
-<p>❌ Não usar IA para fraudar ou ocultar autoria</p>
-<p>❌ Não buscar respostas para temas totalmente desconhecidos</p>
-</div></section>
-<section id="questões-éticas" class="slide level2 center">
-<h2>Questões Éticas</h2>
-<p>⚖️ <strong>Ética no uso da IAG envolve:</strong></p>
+<section id="cuidados-e-ética" class="slide level2 center">
+<h2>Cuidados e ética</h2>
 <ul>
-<li>📌 Conformidade com a LGPD e direitos autorais</li>
-<li>🔍 Transparência sobre o uso de IA</li>
-<li>🧩 Inclusão e respeito à diversidade</li>
-<li>🧠 Evitar reprodução de preconceitos e estereótipos</li>
-<li>🗣️ Assumir responsabilidade pelo conteúdo final</li>
-</ul>
-<p>🧭 Ética = julgamento contextual, responsabilidade e cuidado</p>
-</section>
-<section id="como-usar" class="slide level2 center">
-<h2>Como usar?</h2>
-<p>💬 <strong>Use com clareza e propósito:</strong></p>
-<ul>
-<li>Planeje o que deseja gerar (defina objetivos)</li>
-<li>Elabore bons <strong>prompts</strong> (comandos claros)</li>
-<li>Revise criticamente os resultados</li>
-<li>Cite o uso da ferramenta, quando apropriado</li>
+<li>Sempre revisar conteúdos gerados</li>
+<li>Modelos locais <strong>não substituem método científico</strong></li>
+<li>Documentar o uso de IA no trabalho</li>
+<li>Checar viéses, alucinações e limitações</li>
+<li>Preferir modelos <strong>abertos e auditáveis</strong></li>
 </ul>
 </section>
-<section id="como-citar" class="slide level2 center">
-<h2>Como citar?</h2>
-<p>📚 A MLA recomenda citar ferramentas de IA generativa sempre que:</p>
-<ul>
-<li>📌 Você incorporar conteúdo gerado pela IA (texto, imagem, dados etc.);</li>
-<li>🛠️ Utilizar a IA para funções como revisão, tradução ou edição textual.</li>
-</ul>
-<p>⚠️ A autoria deve continuar sendo <strong>humana</strong>.</p>
-</section>
-<section class="slide level2">
-
-<h3 class="center" id="elementos-da-citação-no-modelo-mla">🧩 Elementos da citação no modelo MLA:</h3>
-<ul>
-<li><strong>Título da fonte</strong>: o conteúdo gerado (ex: “Resumo gerado para introdução”)</li>
-<li><strong>Título do container</strong>: nome da IA (ex: <em>ChatGPT</em>)</li>
-<li><strong>Versão</strong>: exata, se possível (ex: GPT-4o, abril de 2025)</li>
-<li><strong>Editora</strong>: empresa responsável (ex: OpenAI)</li>
-<li><strong>Data</strong>: da geração do conteúdo</li>
-<li><strong>Local</strong>: URL da ferramenta (ex: https://chat.openai.com)</li>
-</ul>
-<p>Fonte: <a href="https://style.mla.org/citing-generative-ai/">MLA Style Center – Citing Generative AI</a></p>
-</section>
-<section id="exemplo-de-nota-de-uso-de-ia" class="slide level2 center">
-<h2>📎 Exemplo de nota de uso de IA</h2>
+<section id="encerramento-da-parte-3" class="slide level2 center">
+<h2>Encerramento da Parte 3</h2>
 <blockquote>
-<p>Foi utilizado o modelo GPT-4o da empresa OpenAI, com o plano ChatGPT Plus, para revisão ortográfica, gramatical e sintática e apoio na formatação das referências. Ressalta-se que todo o conteúdo analítico, argumentativo e as ideias centrais do texto são de responsabilidade exclusiva do autor. As consultas foram realizadas entre os dias 03 e 16 de fevereiro e entre 6 e 8 de abril de 2025.</p>
+<p>Agora que entendemos como rodar modelos locais…</p>
+<p>✨ estamos prontos para discutir <strong>agentes locais</strong>, automação leve e <strong>OpenCode</strong> (Parte 4 — bônus)</p>
 </blockquote>
-</section>
-<section id="exemplo-de-citação-em-estilo-mla" class="slide level2 center">
-<h2>📝 Exemplo de citação em estilo MLA</h2>
-<p>📌 “Revisão ortográfica, gramatical e sintática de texto acadêmico.” <em>ChatGPT</em>, version GPT-4o, OpenAI, 8 Apr.&nbsp;2025, https://chat.openai.com/.</p>
-</section>
-<section id="exemplos-de-uso-da-iag-na-vida-acadêmica" class="slide level2 center">
-<h2>Exemplos de uso da IAG na vida acadêmica</h2>
-<p>📌 IAG pode ser usada para <strong>otimizar tarefas</strong> sem substituir o trabalho intelectual:</p>
-<ul>
-<li>📖 Assistente de leitura</li>
-<li>📝 Revisor de textos</li>
-<li>📊 Apoio à análise de dados</li>
-<li>👨‍🏫 Preparação de aulas</li>
-<li>🌍 Tradução de materiais</li>
-</ul>
-</section>
-<section id="assistente-de-leitura" class="slide level2 center">
-<h2>Assistente de leitura</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p>📘 <strong>Aplicações:</strong></p>
-<ul>
-<li>Geração de resumos iniciais</li>
-<li>Reformulação de trechos difíceis</li>
-<li>Sugestões de questões a partir do texto</li>
-</ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>⚠️ <strong>Cuidados:</strong></p>
-<ul>
-<li>Não substituir a leitura crítica</li>
-<li>Verificar fidelidade ao texto original</li>
-</ul>
-</div></div>
-</section>
-<section id="revisor-de-textos" class="slide level2 center">
-<h2>Revisor de textos</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p>📝 <strong>A IA pode:</strong></p>
-<ul>
-<li>Corrigir gramática e ortografia</li>
-<li>Sugerir reformulações</li>
-<li>Ajudar na normalização de referências</li>
-</ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>⚠️ <strong>Boas práticas:</strong></p>
-<ul>
-<li>Revisar sempre as sugestões</li>
-<li>Comparar versões para aprender com o processo</li>
-<li>Não publicar sem passar por revisão crítica</li>
-</ul>
-</div></div>
-</section>
-<section id="análise-de-dados-e-visualização" class="slide level2 center">
-<h2>Análise de dados e visualização</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p>📊 <strong>Aplicações:</strong></p>
-<ul>
-<li>Geração de gráficos e tabelas</li>
-<li>Sugestões de interpretação inicial</li>
-<li>Apoio a análises qualitativas com IA (ex: codificação)</li>
-</ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>⚠️ <strong>Cuidados:</strong></p>
-<ul>
-<li>Validar os resultados com conhecimento de método</li>
-<li>Cuidado com “interpretações fabricadas”</li>
-</ul>
-</div></div>
-</section>
-<section id="preparação-de-aulas-e-materiais-didáticos" class="slide level2 center">
-<h2>Preparação de aulas e materiais didáticos</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p>👨‍🏫 <strong>IAG pode ajudar a:</strong></p>
-<ul>
-<li>Gerar planos de aula</li>
-<li>Criar perguntas e atividades</li>
-<li>Adaptar linguagem para diferentes públicos</li>
-</ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>⚠️ <strong>O conteúdo gerado deve:</strong></p>
-<ul>
-<li>Ser adaptado ao contexto da turma</li>
-<li>Passar por revisão ética e pedagógica</li>
-</ul>
-</div></div>
-</section>
-<section id="tradução-de-materiais-acadêmicos" class="slide level2 center">
-<h2>Tradução de materiais acadêmicos</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p>🌍 <strong>IAG pode:</strong></p>
-<ul>
-<li>Ajudar na tradução de artigos e documentos</li>
-<li>Facilitar a escrita em segunda língua</li>
-</ul>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<p>⚠️ <strong>Cuidados:</strong></p>
-<ul>
-<li>Evitar traduções literais</li>
-<li>Revisar tecnicamente o vocabulário</li>
-<li>Verificar coerência textual</li>
-</ul>
-</div></div>
 
 </section>
     </div>

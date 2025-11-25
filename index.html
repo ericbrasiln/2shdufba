@@ -588,15 +588,6 @@ Quanto mais parâmetros, maior a <strong>capacidade de representar padrões comp
 </tbody>
 </table>
 </section>
-<section id="qual-o-custo-disso" class="slide level2 center">
-<h2>Qual o custo disso?</h2>
-<ul>
-<li>Altíssimo consumo de energia (relação direta com o uso)</li>
-<li>Custos operacionais por <strong>milhão de tokens gerados</strong></li>
-<li>Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)</li>
-</ul>
-<p>⚠️ Usar IA generativa tem um custo <strong>invisível ao usuário, mas real</strong></p>
-</section>
 <section id="principais-inovações-do-gpt-5" class="slide level2 center">
 <h2>Principais inovações do GPT-5</h2>
 <h3 id="arquitetura-tipo-mixture-of-experts">1. Arquitetura tipo “Mixture-of-Experts”</h3>
@@ -613,6 +604,15 @@ Quanto mais parâmetros, maior a <strong>capacidade de representar padrões comp
 <li>Janela de contexto expandida: ultrapassa <strong>um milhão de tokens</strong>, o que permite analisar livros inteiros, bases de código ou longas conversas.</li>
 </ul>
 <p><strong>Fonte:</strong> <a href="https://medium.com/%40cognidownunder/gpt-5-openais-unified-intelligence-play-50fcfab6665b">“GPT-5: OpenAI’s Unified Intelligence Play”, Medium, 7 de ago de 2025.</a></p>
+</section>
+<section id="qual-o-custo-disso" class="slide level2 center">
+<h2>Qual o custo disso?</h2>
+<ul>
+<li>Altíssimo consumo de energia (relação direta com o uso)</li>
+<li>Custos operacionais por <strong>milhão de tokens gerados</strong></li>
+<li>Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)</li>
+</ul>
+<p>⚠️ Usar IA generativa tem um custo <strong>invisível ao usuário, mas real</strong></p>
 </section>
 <section id="word-embeddings" class="slide level2 center">
 <h2>Word Embeddings</h2>
@@ -803,8 +803,8 @@ com objetivos específicos, como:</p>
 <ul>
 <li>Desenvolvidos por grandes empresas (OpenAI, Google)</li>
 <li>Acesso via APIs</li>
-<li>Pouca transparência (caixa-preta)</li>
-<li>Exemplos: GPT-4, Claude, Gemini</li>
+<li>Pouca transparência (<em>black box</em>)</li>
+<li>Exemplos: GPT-5, Claude, Gemini</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>🔓 Modelos Abertos</strong></p>
@@ -812,7 +812,7 @@ com objetivos específicos, como:</p>
 <li>Código-fonte acessível e personalizável</li>
 <li>Executáveis localmente</li>
 <li>Maior controle e privacidade</li>
-<li>Exemplos: LLaMA 3 (Meta), Mistral, Sabia-7B (Maritaca)</li>
+<li>Exemplos: LLaMA (Meta), Mistral, Sabia-7B</li>
 </ul>
 </div></section>
 <section id="como-escolher-entre-modelos" class="slide level2 center">
@@ -846,99 +846,82 @@ com objetivos específicos, como:</p>
 </li>
 <li>Funciona em <strong>Linux</strong>, <strong>Windows</strong> e <strong>macOS</strong><br>
 </li>
-<li>Usa containers de modelos via <strong>Modelfile</strong><br>
-</li>
-<li>Baseado em <code>llama.cpp</code> → eficiente em CPUs comuns<br>
-</li>
+<li>Usa containers de modelos via <strong>Modelfile</strong> (que possibilita customizar diferentes aspectos do modelo)</li>
 </ul>
-</div><div class="column" style="width:35%;">
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:30%;">
 <p><img data-src="https://ollama.com/public/ollama.png"></p>
 </div></section>
 <section id="por-que-usar-o-ollama" class="slide level2 center">
 <h2>Por que usar o Ollama?</h2>
 <ul>
-<li>🔒 <strong>Privacidade:</strong> nada vai para a nuvem<br>
-</li>
-<li>💻 <strong>Execução offline:</strong> ideal para Humanidades e dados sensíveis<br>
-</li>
+<li>🔒 <strong>Privacidade:</strong> ideal para dados sensíveis e pesquisa acadêmica</li>
 <li>⚖️ <strong>Autonomia e soberania digital</strong><br>
 </li>
 <li>🧪 <strong>Reprodutibilidade:</strong> sempre a mesma versão local<br>
 </li>
 <li>🪶 <strong>Modelos leves:</strong> funcionam em laptops modestos<br>
 </li>
-<li>⚙️ <strong>Integração fácil</strong> com Python, Node, REST APIs, Open WebUI<br>
-</li>
-<li></li>
-<li>Aprendizado prático sobre LLMs e IA Generativa</li>
+<li>⚙️ <strong>Integração fácil</strong> com Python, Open WebUi, LangChain, etc.</li>
+<li>👩‍🏫 Aprendizado prático sobre LLMs e IA Generativa</li>
 </ul>
 </section>
-<section id="instalação-rápida" class="slide level2 center">
-<h2>Instalação rápida</h2>
+<section id="instalação" class="slide level2 center">
+<h2>Instalação</h2>
 <h3 id="linux-ubuntu">🐧 Linux (Ubuntu)</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://ollama.com/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 id="windows-wsl">🪟 Windows (WSL)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">wsl</span> <span class="at">--install</span></span>
-<span id="cb2-2"><a href=""></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://ollama.com/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="windows">🪟 Windows</h3>
+<p>Baixe o instalador em:</p>
+<p><a href="https://ollama.com/download/windows">https://ollama.com/download/windows</a></p>
 </section>
 <section id="conferindo-sua-instalação" class="slide level2 center">
 <h2>Conferindo sua instalação</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># Verificar se o serviço está ativo</span></span>
-<span id="cb3-2"><a href=""></a><span class="ex">systemctl</span> status ollama</span>
-<span id="cb3-3"><a href=""></a></span>
-<span id="cb3-4"><a href=""></a><span class="co"># Listar modelos instalados</span></span>
-<span id="cb3-5"><a href=""></a><span class="ex">ollama</span> list</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="co"># Verificar se o serviço está ativo</span></span>
+<span id="cb2-2"><a href=""></a><span class="ex">systemctl</span> status ollama</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a><span class="co"># Listar modelos instalados</span></span>
+<span id="cb2-5"><a href=""></a><span class="ex">ollama</span> list</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="baixando-modelos" class="slide level2 center">
 <h2>Baixando modelos</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">ollama</span> pull phi3</span>
-<span id="cb4-2"><a href=""></a><span class="ex">ollama</span> pull mistral</span>
-<span id="cb4-3"><a href=""></a><span class="ex">ollama</span> pull llama3</span>
-<span id="cb4-4"><a href=""></a><span class="ex">ollama</span> pull gemma2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="ex">ollama</span> pull phi3:mini</span>
+<span id="cb3-2"><a href=""></a><span class="ex">ollama</span> pull gemma3:4b</span>
+<span id="cb3-3"><a href=""></a><span class="ex">ollama</span> pull qwen3:0.6b</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>📌 <em>Dica:</em> Prefira modelos <strong>small/mini</strong> em PCs sem GPU.</p>
 </section>
 <section id="rodando-seu-primeiro-modelo" class="slide level2 center">
 <h2>Rodando seu primeiro modelo</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="ex">ollama</span> run phi3:mini</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">ollama</span> run phi3:mini</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Depois basta digitar um prompt:</p>
 <pre><code>Explique o conceito de “arquivo histórico” em 3 linhas.</code></pre>
 </section>
 <section id="usando-o-ollama-com-prompts-diretos" class="slide level2 center">
 <h2>Usando o Ollama com prompts diretos</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="ex">ollama</span> run mistral <span class="st">"Resuma este texto em 2 linhas: ... "</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="ex">ollama</span> run mistral <span class="st">"Resuma este texto em 2 linhas: ... "</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="usando-via-api-python" class="slide level2 center">
 <h2>Usando via API (Python)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="im">import</span> requests</span>
-<span id="cb8-2"><a href=""></a></span>
-<span id="cb8-3"><a href=""></a>r <span class="op">=</span> requests.post(</span>
-<span id="cb8-4"><a href=""></a>  <span class="st">"http://localhost:11434/api/generate"</span>,</span>
-<span id="cb8-5"><a href=""></a>  json<span class="op">=</span>{</span>
-<span id="cb8-6"><a href=""></a>    <span class="st">"model"</span>: <span class="st">"phi3:mini"</span>,</span>
-<span id="cb8-7"><a href=""></a>    <span class="st">"prompt"</span>: <span class="st">"Explique RAG em 3 linhas."</span></span>
-<span id="cb8-8"><a href=""></a>  }</span>
-<span id="cb8-9"><a href=""></a>)</span>
-<span id="cb8-10"><a href=""></a></span>
-<span id="cb8-11"><a href=""></a><span class="bu">print</span>(r.json()[<span class="st">"response"</span>])</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="integração-com-documentos" class="slide level2 center">
-<h2>Integração com documentos</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">import</span> requests</span>
-<span id="cb9-2"><a href=""></a></span>
-<span id="cb9-3"><a href=""></a>texto <span class="op">=</span> <span class="bu">open</span>(<span class="st">"artigo.txt"</span>).read()</span>
-<span id="cb9-4"><a href=""></a></span>
-<span id="cb9-5"><a href=""></a>prompt <span class="op">=</span> <span class="ss">f"Leia o texto abaixo e produza um resumo crítico:</span><span class="ch">\n\n</span><span class="sc">{</span>texto<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb9-6"><a href=""></a></span>
-<span id="cb9-7"><a href=""></a>r <span class="op">=</span> requests.post(</span>
-<span id="cb9-8"><a href=""></a>  <span class="st">"http://localhost:11434/api/generate"</span>,</span>
-<span id="cb9-9"><a href=""></a>  json<span class="op">=</span>{<span class="st">"model"</span>: <span class="st">"mistral"</span>, <span class="st">"prompt"</span>: prompt}</span>
-<span id="cb9-10"><a href=""></a>)</span>
-<span id="cb9-11"><a href=""></a></span>
-<span id="cb9-12"><a href=""></a><span class="bu">print</span>(r.json()[<span class="st">"response"</span>])</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="im">import</span> requests</span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a>r <span class="op">=</span> requests.post(</span>
+<span id="cb7-4"><a href=""></a>  <span class="st">"http://localhost:11434/api/generate"</span>,</span>
+<span id="cb7-5"><a href=""></a>  json<span class="op">=</span>{</span>
+<span id="cb7-6"><a href=""></a>    <span class="st">"model"</span>: <span class="st">"phi3:mini"</span>,</span>
+<span id="cb7-7"><a href=""></a>    <span class="st">"prompt"</span>: <span class="st">"Explique RAG em 3 linhas."</span></span>
+<span id="cb7-8"><a href=""></a>  }</span>
+<span id="cb7-9"><a href=""></a>)</span>
+<span id="cb7-10"><a href=""></a></span>
+<span id="cb7-11"><a href=""></a><span class="bu">print</span>(r.json()[<span class="st">"response"</span>])</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="onde-ficam-os-modelos" class="slide level2 center">
 <h2>Onde ficam os modelos?</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">~/.ollama/models</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">~/.ollama/models</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>No windows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="ex">%USERPROFILE%\.ollama\models</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="estrutura-dos-modelos-no-ollama" class="slide level2 center">
+<h2>Estrutura dos modelos no Ollama</h2>
 <p>Cada modelo é um <strong>container</strong> com:</p>
 <ul>
 <li>arquitetura</li>
@@ -948,54 +931,58 @@ com objetivos específicos, como:</p>
 <li>instruções do Modelfile</li>
 </ul>
 </section>
-<section id="quantização-rodando-modelos-leves" class="slide level2 center">
-<h2>Quantização: rodando modelos leves</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Sufixo</th>
-<th>Exemplo</th>
-<th>RAM</th>
-<th>Observação</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>q2</code></td>
-<td><code>phi3:q2</code></td>
-<td>🟢 baixa</td>
-<td>muito rápido, menos preciso</td>
-</tr>
-<tr class="even">
-<td><code>q4</code></td>
-<td><code>mistral:q4</code></td>
-<td>🟡 média</td>
-<td>ótimo custo-benefício</td>
-</tr>
-<tr class="odd">
-<td><code>q6</code></td>
-<td><code>llama3:q6</code></td>
-<td>🔵 alta</td>
-<td>mais qualidade</td>
-</tr>
-<tr class="even">
-<td><code>q8</code></td>
-<td><code>gemma2:q8</code></td>
-<td>🔴 muito alta</td>
-<td>quase sem perdas</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="modelos-recomendados-para-laptop-sem-gpu" class="slide level2 center">
-<h2>Modelos recomendados para laptop sem GPU</h2>
+<section id="modelfile-criando-seu-próprio-modelo-local" class="slide level2 columns">
+<h2>Modelfile: criando seu próprio modelo local</h2>
+<p>Um <em>Modelfile</em> é um arquivo de configuração usado pelo <strong>Ollama</strong> para:</p>
 <ul>
-<li><code>phi3:mini</code> (3.8B)</li>
-<li><code>mistral:instruct</code> (7B)</li>
-<li><code>llama3:8b</code></li>
-<li><code>qwen2.5:7b</code></li>
-<li><code>sabiá-7b</code> (modelo brasileiro)</li>
+<li>Criar uma <strong>variante personalizada</strong> de um modelo;</li>
+<li>Definir <strong>instruções iniciais</strong> (estilo, persona, tom);</li>
+<li>Ajustar <strong>parâmetros básicos</strong> (contexto, temperatura, template);</li>
+<li>Incluir <strong>exemplos</strong> e <strong>comportamentos padrão</strong>.</li>
 </ul>
+</section>
+<section class="slide level2">
+
+<h3 class="center" id="exemplo-de-modelfile">📝 Exemplo de <code>Modelfile</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">FROM</span> phi3:mini</span>
+<span id="cb10-2"><a href=""></a></span>
+<span id="cb10-3"><a href=""></a><span class="co"># Instruções que o modelo seguirá sempre</span></span>
+<span id="cb10-4"><a href=""></a><span class="ex">SYSTEM</span> <span class="st">"""</span></span>
+<span id="cb10-5"><a href=""></a><span class="st">Você é um assistente especializado em **resumo, síntese e análise de textos**, com foco em Humanidades, Ciências Sociais e áreas correlatas.</span></span>
+<span id="cb10-6"><a href=""></a></span>
+<span id="cb10-7"><a href=""></a><span class="st">OBJETIVO PRINCIPAL</span></span>
+<span id="cb10-8"><a href=""></a><span class="st">- Transformar textos longos em **resumos claros, fiéis, estruturados e concisos**, mantendo precisão conceitual.</span></span>
+<span id="cb10-9"><a href=""></a><span class="st">- Priorizar **ideias centrais**, conceitos, argumentos, métodos e conclusões.</span></span>
+<span id="cb10-10"><a href=""></a><span class="st">- Reduzir redundâncias, cortar ruído e destacar relações importantes entre conceitos.</span></span>
+<span id="cb10-11"><a href=""></a></span>
+<span id="cb10-12"><a href=""></a><span class="st">IDIOMA E ESTILO</span></span>
+<span id="cb10-13"><a href=""></a><span class="st">- Responda SEMPRE em português do Brasil (exceto nomes de pacotes, comandos, APIs e código).</span></span>
+<span id="cb10-14"><a href=""></a><span class="st">- Seja direto, técnico, claro e objetivo.</span></span>
+<span id="cb10-15"><a href=""></a><span class="st">- Evite prolixidade. Prefira frases curtas.</span></span>
+<span id="cb10-16"><a href=""></a><span class="st">- Quando apropriado, ofereça:</span></span>
+<span id="cb10-17"><a href=""></a><span class="st">  - Resumo estrutural (tópicos)</span></span>
+<span id="cb10-18"><a href=""></a><span class="st">  - Resumo narrativo (parágrafo)</span></span>
+<span id="cb10-19"><a href=""></a><span class="st">  - Versão ultracurta (1–2 frases)</span></span>
+<span id="cb10-20"><a href=""></a></span>
+<span id="cb10-21"><a href=""></a><span class="st">REGRAS DE RESUMO</span></span>
+<span id="cb10-22"><a href=""></a><span class="st">- Não inventar informações.</span></span>
+<span id="cb10-23"><a href=""></a><span class="st">- Não fazer interpretação além do texto, exceto quando solicitado.</span></span>
+<span id="cb10-24"><a href=""></a><span class="st">- Se o texto estiver confuso, reorganize-o com coerência.</span></span>
+<span id="cb10-25"><a href=""></a><span class="st">- Se o usuário não fornecer o texto, peça que envie o conteúdo.</span></span>
+<span id="cb10-26"><a href=""></a><span class="st">"""</span></span>
+<span id="cb10-27"><a href=""></a></span>
+<span id="cb10-28"><a href=""></a><span class="co"># Configurações básicas</span></span>
+<span id="cb10-29"><a href=""></a><span class="ex">PARAM</span> temperature 0.2</span>
+<span id="cb10-30"><a href=""></a><span class="ex">PARAM</span> num_ctx 8000</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="como-construir-e-usar-um-modelfile" class="slide level2 center">
+<h2>Como construir e usar um Modelfile</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="co"># Criar o modelo personalizado</span></span>
+<span id="cb11-2"><a href=""></a><span class="ex">ollama</span> create assistente <span class="at">-f</span> Modelfile</span>
+<span id="cb11-3"><a href=""></a></span>
+<span id="cb11-4"><a href=""></a><span class="co"># Rodar o modelo</span></span>
+<span id="cb11-5"><a href=""></a><span class="ex">ollama</span> run assistente</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>📌 <em>Resultado:</em> você cria uma <strong>versão local</strong> e <strong>sob medida</strong> do modelo, ideal para pesquisa, ensino e projetos repetitivos.</p>
 </section>
 <section id="dicas-de-uso-prático-na-pesquisa" class="slide level2 columns">
 <h2>Dicas de uso prático na pesquisa</h2>
@@ -1016,28 +1003,12 @@ com objetivos específicos, como:</p>
 <li>Auxílio em OCR e anotação</li>
 </ul>
 </div></section>
-<section id="open-webui-ollama" class="slide level2 center">
-<h2>Open WebUI + Ollama</h2>
-<p>🎛️ Interface gráfica para controlar seus modelos:</p>
-<ul>
-<li>Histórico de conversas</li>
-<li>Suporte a arquivos</li>
-<li>Ajuste de temperatura</li>
-<li>Múltiplos usuários</li>
-<li>Painel de modelos disponíveis</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">pip</span> install open-webui</span>
-<span id="cb11-2"><a href=""></a><span class="ex">open-webui</span> serve</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 <section id="atividade-prática" class="slide level2 center">
 <h2>Atividade prática</h2>
 <p>🔧 <strong>Tarefas:</strong></p>
 <ol type="1">
 <li><p>Rodar <strong>2 modelos locais</strong> (Phi-3, Mistral, LLaMA3, Gemma, Sabiá)</p></li>
-<li><p>Criar um comando:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">ollama</span> run phi3:mini <span class="st">"Resuma o texto abaixo: &lt;cole o trecho&gt;"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
+<li><p>Criar um Modelfile simples para resumo acadêmico</p></li>
 <li><p>Criar um script Python que receba:</p>
 <ul>
 <li>1 arquivo <code>.txt</code></li>
@@ -1055,13 +1026,6 @@ com objetivos específicos, como:</p>
 <li>Checar viéses, alucinações e limitações</li>
 <li>Preferir modelos <strong>abertos e auditáveis</strong></li>
 </ul>
-</section>
-<section id="encerramento-da-parte-3" class="slide level2 center">
-<h2>Encerramento da Parte 3</h2>
-<blockquote>
-<p>Agora que entendemos como rodar modelos locais…</p>
-<p>✨ estamos prontos para discutir <strong>agentes locais</strong>, automação leve e <strong>OpenCode</strong> (Parte 4 — bônus)</p>
-</blockquote>
 
 </section>
     </div>

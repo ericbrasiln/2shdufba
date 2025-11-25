@@ -407,16 +407,6 @@ Em termos simples:
 
 ---
 
-## Qual o custo disso? {.center}
-
-- Altíssimo consumo de energia (relação direta com o uso)
-- Custos operacionais por **milhão de tokens gerados**
-- Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)
-
-⚠️ Usar IA generativa tem um custo **invisível ao usuário, mas real**
-
----
-
 ## Principais inovações do GPT-5 {.center}
 
 ### 1. Arquitetura tipo “Mixture-of-Experts”  
@@ -432,6 +422,16 @@ Em termos simples:
 - Janela de contexto expandida: ultrapassa **um milhão de tokens**, o que permite analisar livros inteiros, bases de código ou longas conversas. 
 
 **Fonte:** [ “GPT-5: OpenAI’s Unified Intelligence Play”, Medium, 7 de ago de 2025. ](https://medium.com/%40cognidownunder/gpt-5-openais-unified-intelligence-play-50fcfab6665b)
+
+---
+
+## Qual o custo disso? {.center}
+
+- Altíssimo consumo de energia (relação direta com o uso)
+- Custos operacionais por **milhão de tokens gerados**
+- Impacto ambiental: água, eletricidades, recursos naturais (mineração para hardware)
+
+⚠️ Usar IA generativa tem um custo **invisível ao usuário, mas real**
 
 ---
 
@@ -593,8 +593,8 @@ com objetivos específicos, como:
 
 - Desenvolvidos por grandes empresas (OpenAI, Google)
 - Acesso via APIs
-- Pouca transparência (caixa-preta)
-- Exemplos: GPT-4, Claude, Gemini
+- Pouca transparência (_black box_)
+- Exemplos: GPT-5, Claude, Gemini
 :::
 
 ::: {.column width="50%"}
@@ -603,7 +603,7 @@ com objetivos específicos, como:
 - Código-fonte acessível e personalizável
 - Executáveis localmente
 - Maior controle e privacidade
-- Exemplos: LLaMA 3 (Meta), Mistral, Sabia-7B (Maritaca)
+- Exemplos: LLaMA (Meta), Mistral, Sabia-7B 
 :::
 
 ---
@@ -642,11 +642,13 @@ com objetivos específicos, como:
 - Plataforma para **executar Modelos de Linguagem (LLMs)** localmente  
 - Suporte nativo a modelos **abertos**   
 - Funciona em **Linux**, **Windows** e **macOS**  
-- Usa containers de modelos via **Modelfile**  
-- Baseado em `llama.cpp` → eficiente em CPUs comuns  
+- Usa containers de modelos via **Modelfile** (que possibilita customizar diferentes aspectos do modelo)
 :::
 
-::: {.column width="35%"}
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
 ![](https://ollama.com/public/ollama.png)
 :::
 
@@ -654,17 +656,16 @@ com objetivos específicos, como:
 
 ## Por que usar o Ollama? {.center}
 
-- 🔒 **Privacidade:** nada vai para a nuvem  
-- 💻 **Execução offline:** ideal para Humanidades e dados sensíveis  
+- 🔒 **Privacidade:** ideal para dados sensíveis e pesquisa acadêmica
 - ⚖️ **Autonomia e soberania digital**  
 - 🧪 **Reprodutibilidade:** sempre a mesma versão local  
 - 🪶 **Modelos leves:** funcionam em laptops modestos  
-- ⚙️ **Integração fácil** com Python, Node, REST APIs, Open WebUI  
-- Aprendizado prático sobre LLMs e IA Generativa
+- ⚙️ **Integração fácil** com Python, Open WebUi, LangChain, etc.
+- 👩‍🏫 Aprendizado prático sobre LLMs e IA Generativa
 
 ---
 
-## Instalação rápida {.center}
+## Instalação {.center}
 
 ### 🐧 Linux (Ubuntu)
 
@@ -672,12 +673,11 @@ com objetivos específicos, como:
 curl -fsSL https://ollama.com/install.sh | sh
 ````
 
-### 🪟 Windows (WSL)
+### 🪟 Windows 
 
-```bash
-wsl --install
-curl -fsSL https://ollama.com/install.sh | sh
-```
+Baixe o instalador em:
+
+[https://ollama.com/download/windows](https://ollama.com/download/windows)
 
 ---
 
@@ -696,10 +696,9 @@ ollama list
 ## Baixando modelos {.center}
 
 ```bash
-ollama pull phi3
-ollama pull mistral
-ollama pull llama3
-ollama pull gemma2
+ollama pull phi3:mini
+ollama pull gemma3:4b
+ollama pull qwen3:0.6b
 ```
 
 📌 *Dica:* Prefira modelos **small/mini** em PCs sem GPU.
@@ -746,30 +745,21 @@ print(r.json()["response"])
 
 ---
 
-## Integração com documentos {.center}
-
-```python
-import requests
-
-texto = open("artigo.txt").read()
-
-prompt = f"Leia o texto abaixo e produza um resumo crítico:\n\n{texto}"
-
-r = requests.post(
-  "http://localhost:11434/api/generate",
-  json={"model": "mistral", "prompt": prompt}
-)
-
-print(r.json()["response"])
-```
-
----
-
 ## Onde ficam os modelos? {.center}
 
 ```bash
 ~/.ollama/models
 ```
+
+No windows:
+
+```bash
+%USERPROFILE%\.ollama\models
+```
+
+---
+
+## Estrutura dos modelos no Ollama {.center}
 
 Cada modelo é um **container** com:
 
@@ -781,24 +771,65 @@ Cada modelo é um **container** com:
 
 ---
 
-## Quantização: rodando modelos leves {.center}
+## Modelfile: criando seu próprio modelo local {.columns}
 
-| Sufixo | Exemplo      | RAM           | Observação                  |
-| ------ | ------------ | ------------- | --------------------------- |
-| `q2`   | `phi3:q2`    | 🟢 baixa      | muito rápido, menos preciso |
-| `q4`   | `mistral:q4` | 🟡 média      | ótimo custo-benefício       |
-| `q6`   | `llama3:q6`  | 🔵 alta       | mais qualidade              |
-| `q8`   | `gemma2:q8`  | 🔴 muito alta | quase sem perdas            |
+Um *Modelfile* é um arquivo de configuração usado pelo **Ollama** para:
+
+- Criar uma **variante personalizada** de um modelo;
+- Definir **instruções iniciais** (estilo, persona, tom);
+- Ajustar **parâmetros básicos** (contexto, temperatura, template);
+- Incluir **exemplos** e **comportamentos padrão**.
 
 ---
 
-## Modelos recomendados para laptop sem GPU {.center}
+### 📝 Exemplo de `Modelfile` {.center}
 
-* `phi3:mini` (3.8B)
-* `mistral:instruct` (7B)
-* `llama3:8b`
-* `qwen2.5:7b`
-* `sabiá-7b` (modelo brasileiro)
+```bash
+FROM phi3:mini
+
+# Instruções que o modelo seguirá sempre
+SYSTEM """
+Você é um assistente especializado em **resumo, síntese e análise de textos**, com foco em Humanidades, Ciências Sociais e áreas correlatas.
+
+OBJETIVO PRINCIPAL
+- Transformar textos longos em **resumos claros, fiéis, estruturados e concisos**, mantendo precisão conceitual.
+- Priorizar **ideias centrais**, conceitos, argumentos, métodos e conclusões.
+- Reduzir redundâncias, cortar ruído e destacar relações importantes entre conceitos.
+
+IDIOMA E ESTILO
+- Responda SEMPRE em português do Brasil (exceto nomes de pacotes, comandos, APIs e código).
+- Seja direto, técnico, claro e objetivo.
+- Evite prolixidade. Prefira frases curtas.
+- Quando apropriado, ofereça:
+  - Resumo estrutural (tópicos)
+  - Resumo narrativo (parágrafo)
+  - Versão ultracurta (1–2 frases)
+
+REGRAS DE RESUMO
+- Não inventar informações.
+- Não fazer interpretação além do texto, exceto quando solicitado.
+- Se o texto estiver confuso, reorganize-o com coerência.
+- Se o usuário não fornecer o texto, peça que envie o conteúdo.
+"""
+
+# Configurações básicas
+PARAMETER temperature 0.2
+PARAMETER num_ctx 8000
+```
+
+---
+
+## Como construir e usar um Modelfile {.center}
+
+```bash
+# Criar o modelo personalizado
+ollama create assistente -f Modelfile
+
+# Rodar o modelo
+ollama run assistente
+```
+
+📌 *Resultado:* você cria uma **versão local** e **sob medida** do modelo, ideal para pesquisa, ensino e projetos repetitivos.
 
 ---
 
@@ -824,23 +855,6 @@ Cada modelo é um **container** com:
 
 ---
 
-## Open WebUI + Ollama {.center}
-
-🎛️ Interface gráfica para controlar seus modelos:
-
-* Histórico de conversas
-* Suporte a arquivos
-* Ajuste de temperatura
-* Múltiplos usuários
-* Painel de modelos disponíveis
-
-```bash
-pip install open-webui
-open-webui serve
-```
-
----
-
 ## Atividade prática {.center}
 
 🔧 **Tarefas:**
@@ -848,11 +862,7 @@ open-webui serve
 1. Rodar **2 modelos locais**
    (Phi-3, Mistral, LLaMA3, Gemma, Sabiá)
 
-2. Criar um comando:
-
-```bash
-ollama run phi3:mini "Resuma o texto abaixo: <cole o trecho>"
-```
+2. Criar um Modelfile simples para resumo acadêmico
 
 3. Criar um script Python que receba:
 
@@ -869,13 +879,4 @@ ollama run phi3:mini "Resuma o texto abaixo: <cole o trecho>"
 * Documentar o uso de IA no trabalho
 * Checar viéses, alucinações e limitações
 * Preferir modelos **abertos e auditáveis**
-
----
-
-## Encerramento da Parte 3 {.center}
-
-> Agora que entendemos como rodar modelos locais…
->
-> ✨ estamos prontos para discutir **agentes locais**,
-> automação leve e **OpenCode** (Parte 4 — bônus)
 

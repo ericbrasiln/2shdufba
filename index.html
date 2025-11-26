@@ -977,25 +977,91 @@ com objetivos específicos, como:</p>
 <span id="cb11-5"><a href=""></a><span class="ex">ollama</span> run assistente</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>📌 <em>Resultado:</em> você cria uma <strong>versão local</strong> e <strong>sob medida</strong> do modelo, ideal para pesquisa, ensino e projetos repetitivos.</p>
 </section>
-<section id="dicas-de-uso-prático-na-pesquisa" class="slide level2 columns">
-<h2>Dicas de uso prático na pesquisa</h2>
-<div class="column" style="width:50%;">
-<p>🔎 <strong>Para análise textual</strong></p>
+<section id="modelos-em-nuvem-do-ollama" class="slide level2 center">
+<h2>Modelos em Nuvem do Ollama</h2>
+<h3 id="o-que-são">O que são?</h3>
 <ul>
-<li>Resumos</li>
-<li>Tópicos</li>
-<li>Explicações conceituais</li>
-<li>Reformulação de textos acadêmicos</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p>📚 <strong>Para Humanidades Digitais</strong></p>
+<li><p>Modelos executados <strong>na infraestrutura da Ollama</strong></p></li>
+<li><p>Não dependem do hardware local (CPU/GPU)</p></li>
+<li><p>Permitem usar <strong>modelos maiores</strong> e <strong>janelas de contexto ampliadas</strong></p></li>
+<li><p>Podem ser usados junto com:</p>
 <ul>
-<li>Extração de entidades</li>
-<li>Classificação simples</li>
-<li>Exploração preliminar de corpus</li>
-<li>Auxílio em OCR e anotação</li>
+<li>Ollama local</li>
+<li>OpenCode.ai</li>
+<li>Aplicações Python / APIs</li>
+<li>Fluxos de pesquisa e RAG</li>
+</ul></li>
 </ul>
-</div></section>
+</section>
+<section id="modelos-em-nuvem-do-ollama-1" class="slide level2 center">
+<h2>Modelos em Nuvem do Ollama</h2>
+<h3 id="por-que-usar">Por que usar?</h3>
+<ul>
+<li>Computadores pessoais sem GPU</li>
+<li>Maior desempenho</li>
+<li>Modelos muito grandes (ex.: <code>qwen3-vl:235b-cloud</code>, <code>gpt-oss:120b-cloud</code>)</li>
+<li>Menor consumo de energia local</li>
+</ul>
+</section>
+<section id="modelos-em-nuvem-do-ollama-2" class="slide level2 center">
+<h2>Modelos em Nuvem do Ollama</h2>
+<h3 id="características">Características</h3>
+<ul>
+<li>Requer <strong>API Key</strong></li>
+<li>Limites de uso e uso cobrado por processamento (dependendo do plano)</li>
+<li>Igual sintaxe dos modelos locais no OpenAI-compatible endpoint</li>
+<li>Integração simples com ferramentas existentes</li>
+</ul>
+</section>
+<section id="gerando-sua-api-key-da-ollama" class="slide level2 center">
+<h2>Gerando sua API Key da Ollama</h2>
+<h3 class="center" id="antes-de-tudo-faça-login-no-ollama">Antes de tudo: faça login no Ollama</h3>
+<ol type="1">
+<li>Vá para: <strong><a href="https://ollama.com/">https://ollama.com/</a></strong></li>
+<li>Clique em <strong>Sign In</strong> ou <strong>Create Account</strong></li>
+<li>Faça login normalmente (e-mail + senha)</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="fazer-login-pelo-terminal">2. Fazer login pelo terminal</h3>
+<p>Depois de logar no site, abra seu terminal e execute:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">ollama</span> signin</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Você verá uma mensagem pedindo autorização no navegador. Acesse o link exibido e confirme o login.</p>
+</section>
+<section id="gerando-sua-api-key-da-ollama-1" class="slide level2 center">
+<h2>Gerando sua API Key da Ollama</h2>
+<ol type="1">
+<li>Acesse <strong><a href="https://ollama.com/settings/keys">https://ollama.com/settings/keys</a></strong></li>
+<li>Clique em <strong>Create API Key</strong></li>
+<li>Defina um nome (ex.: <em>oficina-2shd</em>)</li>
+<li>Clique em <strong>Create</strong></li>
+<li><strong>Copie e salve a chave</strong>
+<ul>
+<li>Ela não aparecerá novamente</li>
+</ul></li>
+</ol>
+</section>
+<section id="gerando-sua-api-key-da-ollama-2" class="slide level2 center">
+<h2>Gerando sua API Key da Ollama</h2>
+<ol start="6" type="1">
+<li>Configure no sistema:</li>
+</ol>
+<p><strong>Linux / macOS</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="bu">export</span> <span class="va">OLLAMA_API_KEY</span><span class="op">=</span><span class="st">"SUA_CHAVE_AQUI"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Windows (PowerShell)</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href=""></a>setx OLLAMA_API_KEY <span class="st">"SUA_CHAVE_AQUI"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="gerando-sua-api-key-da-ollama-3" class="slide level2 center">
+<h2>Gerando sua API Key da Ollama</h2>
+<h3 id="observações-importantes">Observações importantes</h3>
+<ul>
+<li>Sem a API Key, modelos “*-cloud” não funcionam</li>
+<li>A chave permite autenticação no endpoint da Ollama Cloud</li>
+<li>Não compartilhe sua chave — trate como senha</li>
+<li>Você pode revogar uma chave a qualquer momento</li>
+</ul>
+</section>
 <section id="atividade-prática" class="slide level2 center">
 <h2>Atividade prática</h2>
 <p>🔧 <strong>Tarefas:</strong></p>

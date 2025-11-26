@@ -823,25 +823,106 @@ ollama run assistente
 
 ---
 
-## Dicas de uso prático na pesquisa {.columns}
+## Modelos em Nuvem do Ollama {.center}
 
-::: {.column width="50%"}
-🔎 **Para análise textual**
+### O que são?
 
-* Resumos
-* Tópicos
-* Explicações conceituais
-* Reformulação de textos acadêmicos
-:::
+* Modelos executados **na infraestrutura da Ollama**
+* Não dependem do hardware local (CPU/GPU)
+* Permitem usar **modelos maiores** e **janelas de contexto ampliadas**
+* Podem ser usados junto com:
 
-::: {.column width="50%"}
-📚 **Para Humanidades Digitais**
+  * Ollama local
+  * OpenCode.ai
+  * Aplicações Python / APIs
+  * Fluxos de pesquisa e RAG
 
-* Extração de entidades
-* Classificação simples
-* Exploração preliminar de corpus
-* Auxílio em OCR e anotação
-:::
+---
+
+## Modelos em Nuvem do Ollama {.center}
+
+### Por que usar?
+
+* Computadores pessoais sem GPU
+* Maior desempenho
+* Modelos muito grandes (ex.: `qwen3-vl:235b-cloud`, `gpt-oss:120b-cloud`)
+* Menor consumo de energia local
+
+---
+
+## Modelos em Nuvem do Ollama {.center}
+
+### Características
+
+* Requer **API Key**
+* Limites de uso e uso cobrado por processamento (dependendo do plano)
+* Igual sintaxe dos modelos locais no OpenAI-compatible endpoint
+* Integração simples com ferramentas existentes
+
+---
+
+## Gerando sua API Key da Ollama {.center}
+
+### Antes de tudo: faça login no Ollama {.center}
+
+1. Vá para:
+   **[https://ollama.com/](https://ollama.com/)**
+2. Clique em **Sign In** ou **Create Account**
+3. Faça login normalmente (e-mail + senha)
+
+---
+
+### 2. Fazer login pelo terminal
+
+Depois de logar no site, abra seu terminal e execute:
+
+```bash
+ollama signin
+```
+
+Você verá uma mensagem pedindo autorização no navegador.
+Acesse o link exibido e confirme o login.
+
+---
+
+## Gerando sua API Key da Ollama {.center}
+
+1. Acesse
+   **[https://ollama.com/settings/keys](https://ollama.com/settings/keys)**
+2. Clique em **Create API Key**
+3. Defina um nome (ex.: *oficina-2shd*)
+4. Clique em **Create**
+5. **Copie e salve a chave**
+   * Ela não aparecerá novamente
+
+---
+
+## Gerando sua API Key da Ollama {.center}
+
+6. Configure no sistema:
+
+**Linux / macOS**
+
+```bash
+export OLLAMA_API_KEY="SUA_CHAVE_AQUI"
+```
+
+**Windows (PowerShell)**
+
+```powershell
+setx OLLAMA_API_KEY "SUA_CHAVE_AQUI"
+```
+
+---
+
+## Gerando sua API Key da Ollama {.center}
+
+### Observações importantes
+
+* Sem a API Key, modelos “*-cloud” não funcionam
+* A chave permite autenticação no endpoint da Ollama Cloud
+* Não compartilhe sua chave — trate como senha
+* Você pode revogar uma chave a qualquer momento
 
 ---
 

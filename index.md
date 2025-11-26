@@ -830,12 +830,12 @@ ollama run assistente
 * Modelos executados **na infraestrutura da Ollama**
 * Não dependem do hardware local (CPU/GPU)
 * Permitem usar **modelos maiores** e **janelas de contexto ampliadas**
-* Podem ser usados junto com:
 
-  * Ollama local
-  * OpenCode.ai
-  * Aplicações Python / APIs
-  * Fluxos de pesquisa e RAG
+---
+
+## Modelos em Nuvem do Ollama {.center}
+
+![Privacidade](imgs/privacy.png)
 
 ---
 
@@ -872,7 +872,7 @@ ollama run assistente
 
 ---
 
-### 2. Fazer login pelo terminal
+### 2. Fazer login pelo terminal {.center}
 
 Depois de logar no site, abra seu terminal e execute:
 

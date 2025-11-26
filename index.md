@@ -12,7 +12,7 @@ format:
     chalkboard:
       buttons: true
     footer: "Eric Brasil | <a href='https://ericbrasil.com.br/contact/'>Entre em contato</a> | 2ª Semana de Humanidades Digitais da UFBA"
-    logo: https://omekas.im.ufrrj.br/files/original/aa99fe174fd6f97dd42ee78a359a46428b9997be.png
+    logo: imgs/logo.png
 author:
   - name: Eric Brasil
     orcid: 0000-0001-5067-8475

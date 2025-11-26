@@ -214,17 +214,7 @@ mas **no que ela faz**." Turing (1950)
 
 ---
 
-## Blade Runner (1982), dir. Ridley Scott {.center}
-
-<video controls width="100%" src="https://ericbrasil.com.br/cclhm00114/aulas/assets/blade_runner_1080p.webm" crossorigin="anonymous">
-  <track src="blade_runner_1080p.vtt" kind="subtitles" srclang="pt" label="Português" default />
-  Seu navegador não suporta vídeo HTML5.
-</video>
-
-
----
-
-### O teste Voight-Kampff em Blade Runner (1982) {.center}
+### O teste Voight-Kampff em Blade Runner (dir. Ridley Scott, 1982) {.center}
 
 ![Utilizado para identificar **replicantes**, distingue humanos de máquinas pela **capacidade empática**](https://ericbrasil.com.br/cclhm00114/aulas/assets/bladerunner.gif)
 

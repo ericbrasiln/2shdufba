@@ -22,6 +22,23 @@ Parte dos conteúdos desta apresentação foi produzida com o apoio do ChatGPT (
 - `ollama_python/` — scripts e exemplos (ex.: script Python para enviar arquivos `.txt` e instruções ao servidor Ollama).
 - `README.md` — este arquivo (sumário e instruções essenciais).
 
+## **Citação sugerida (curta)**
+
+Eric Brasil (2025). 2shdufba: Inteligência Artificial Generativa e Pesquisa nas Humanidades — materiais da oficina. Zenodo. DOI: 10.5281/zenodo.17736235
+
+## **Entrada BibTeX sugerida**
+
+```bibtex
+@misc{brasil_2shdufba_2025,
+  author = {Eric Brasil},
+  title = {2shdufba: Inteligência Artificial Generativa e Pesquisa nas Humanidades — Materiais da oficina},
+  year = {2025},
+  url = {https://github.com/ericbrasiln/2shdufba},
+  doi = {10.5281/zenodo.17736235},
+  note = {GitHub release v1.0.0; CC BY-NC-SA 4.0}
+}
+```
+
 ## Licença
 
 Os materiais textuais e os exemplos neste repositório estão, por padrão, sob a licença indicada em `LICENSE.md` (Creative Commons Atribuição‑NãoComercial‑CompartilhaIgual 4.0 Internacional). Consulte `LICENSE.md` para detalhes.
@@ -31,3 +48,4 @@ Os materiais textuais e os exemplos neste repositório estão, por padrão, sob 
 Eric Brasil — veja informações de contato nos slides ou em https://ericbrasil.com.br/contact/
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />Este repositório está licenciado com uma Licença <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional</a>.
+

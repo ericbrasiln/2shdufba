@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Se você usar estes materiais em publicações, por favor cite-os como indicado abaixo."
+title: "2shdufba: Inteligência Artificial Generativa e Pesquisa nas Humanidades — Materiais da oficina"
+version: "v1.0.0"
+doi: "10.5281/zenodo.17736235"
+date-released: "2025-11-26"
+authors:
+  - family-names: "Brasil"
+    given-names: "Eric"
+    orcid: "https://orcid.org/0000-0001-5067-8475"
+    affiliation: "UNILAB; PPGIHD/UFRRJ; LABHDUFBA"
+repository-code: "https://github.com/ericbrasiln/2shdufba"
+license: "CC-BY-NC-SA-4.0"
+abstract: >-
+  Materiais (slides, Modelfile, scripts) da oficina “Inteligência Artificial Generativa e Pesquisa nas Humanidades: ética, epistemologia e práticas locais com Ollama”, apresentada na 2ª Semana de Humanidades Digitais da UFBA.
+keywords:
+  - "Inteligência Artificial"
+  - "IA Generativa"
+  - "LLM"
+  - "Ollama"
+  - "Humanidades Digitais"
+  - "workshop"

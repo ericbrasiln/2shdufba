@@ -1,7 +1,7 @@
 ---
 title: "Inteligência Artificial Generativa e Pesquisa nas Humanidades"
 subtitle: "Ética, epistemologia e práticas locais com Ollama"
-date: today
+date: 2025-11-26
 date-format: full
 lang: pt-br
 format:
@@ -19,6 +19,12 @@ author:
     affiliation: (UNILAB • PPGIHD/UFRRJ • LABHDUFBA)
 description: "Oficina prática apresentada na 2ª Semana de Humanidades Digitais da UFBA. A atividade aborda fundamentos, implicações éticas e epistemológicas e práticas locais com modelos abertos via Ollama, pensando a pesquisa em Humanidades em máquinas pessoais e com software livre."
 toc: false
+---
+
+## {.center}
+
+![Acesse os slides da oficina em [https://ericbrasil.com.br/2shdufba/](https://ericbrasil.com.br/2shdufba/)](imgs/oficina.png)
+
 ---
 
 ## Nota sobre o uso de IA Generativa {.center}
@@ -67,8 +73,7 @@ toc: false
 
 ::: {.column width="46%"}
 3. **Rodando modelos locais com Ollama**  
-4. **Bônus (se houver tempo)**  
-   **OpenCode:** agentes locais e automação leve.  
+    Prática com modelos abertos e criação de Modelfiles.
 :::
 
 ---
@@ -872,7 +877,7 @@ ollama run assistente
 
 ---
 
-### 2. Fazer login pelo terminal {.center}
+## Fazer login pelo terminal {.center}
 
 Depois de logar no site, abra seu terminal e execute:
 
@@ -933,9 +938,9 @@ setx OLLAMA_API_KEY "SUA_CHAVE_AQUI"
 1. Rodar **2 modelos locais**
    (Phi-3, Mistral, LLaMA3, Gemma, Sabiá)
 
-2. Criar um Modelfile simples para resumo acadêmico
+2. [ Criar um Modelfile simples para resumo acadêmico ](https://github.com/ericbrasiln/2shdufba/blob/main/ollama_modelfile/Modelfile)
 
-3. Criar um script Python que receba:
+3. [Criar um script Python que receba](https://github.com/ericbrasiln/2shdufba/tree/main/ollama_python):
 
    * 1 arquivo `.txt`
    * 1 instrução

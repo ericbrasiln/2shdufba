@@ -1,6 +1,6 @@
 ---
 title: "Inteligência Artificial Generativa e Pesquisa nas Humanidades"
-subtitle: "Ética, epistemologia e práticas locais com Ollama"
+subtitle: "Ética, epistemologia e práticas locais com Ollama\br[![DOI](https://zenodo.org/badge/1103143805.svg)](https://doi.org/10.5281/zenodo.17736234)"
 date: 2025-11-26
 date-format: full
 lang: pt-br

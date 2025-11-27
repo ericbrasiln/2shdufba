@@ -2,6 +2,8 @@
 
 Autor: Eric Brasil (UNILAB • PPGIHD/UFRRJ • LABHDUFBA)
 
+[![DOI](https://zenodo.org/badge/1103143805.svg)](https://doi.org/10.5281/zenodo.17736234)
+
 ## Descrição
 
 Repositório que reúne os materiais da oficina prática apresentada na 2ª Semana de Humanidades Digitais da UFBA (26 de novembro de 2025). A atividade aborda fundamentos conceituais, implicações éticas e epistemológicas, e práticas locais com modelos abertos executados via Ollama, com foco em pesquisa nas Humanidades em máquinas pessoais e software livre.
